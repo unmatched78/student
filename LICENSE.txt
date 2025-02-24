@@ -1,0 +1,31 @@
+# QuickAsk - Custom License  
+
+Copyright (c) 2025 Quickask 
+
+This application, QuickAsk, is licensed under the following terms:  
+
+## License Summary:  
+
+QuickAsk is intended to facilitate asking questions quickly and efficiently. As a user of QuickAsk, you have the following rights:  
+
+1. **Use**: You may use this software for personal, educational, or non-commercial purposes.  
+2. **Modify**: You may modify the source code to suit your needs for non-commercial use.  
+3. **Distribute**: You may distribute copies of the original software or your modified versions, provided that:  
+   - You include this license.  
+   - You do not charge for the software or any derived works.  
+
+## Commercial Use:  
+
+Commercial use of QuickAsk is strictly prohibited without prior written permission from the owner. If you wish to use QuickAsk for commercial purposes, you must contact the owner to obtain a commercial license or negotiate terms.  
+
+## Contributions:  
+
+Contributions to QuickAsk are welcome and encouraged. If you wish to contribute, please submit your changes or enhancements via a pull request. All contributions will be considered for inclusion in future versions of the software.  
+
+## Important Notice:  
+
+In order to ensure that the freedoms granted by this license are preserved, any distributed modifications must also be licensed under these same terms. This ensures that everyone has the opportunity to benefit from further improvements.  
+
+For more details about licensing, please contact marvinavi24@gmail.com.  
+
+By using this software, you acknowledge your acceptance of these terms.
