@@ -4,3 +4,4 @@ python-docx
 mistralai
 langchain
 python-pptx
+python-dotenv

@@ -5,9 +5,13 @@ from docx import Document
 from mistralai import Mistral  
 from langchain.text_splitter import RecursiveCharacterTextSplitter  
 import re  
-from pptx import Presentation  # Import library for PowerPoint support  
-# Initialize Mistral API  
-api_key = "GktcH95f32k4eCQkz5A1u8H3J3iMFeIv"  # Replace with your actual API key  
+from pptx import Presentation  
+from dotenv import load_dotenv  
+import os  
+load_dotenv()  
+
+# Access the API key from the environment variable  
+api_key = os.getenv("mistral_api_key") 
 client = Mistral(api_key=api_key)  
 
 def extract_text_from_file(uploaded_file):  
