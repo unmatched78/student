@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 import os  
 load_dotenv()  
 
-# Access the API key from the environment variable  
+
 api_key = os.getenv("mistral_api_key") 
 client = Mistral(api_key=api_key)  
 
@@ -44,7 +44,7 @@ def generate_questions_from_text(text_chunks, prompt, num_questions):
     combined_prompt = (  
         f"{prompt}\nContent:\n{combined_text}\n\n"  
         f"Generate exactly {num_questions} multiple-choice questions with correct answers in JSON format:\n"  
-        '[{"question": "string", "options": ["A", "B", "C", "D"], "correct_choice": "string"}]'  
+        '[{"question": "string", "options": ["A", "B", "C", "D"], "correct_choice": "string"}, please keep in mind that the cocorrect_choice , will not be a letter only , it will be a complete set; i.e :D. It forms the inner layer of the bone matrix., etc ]'  
     )  
 
     response = client.chat.complete(  
@@ -69,21 +69,18 @@ def evaluate_answers(questions, student_answers):
         options = question.get("options", [])  
         correct_answer_text = question.get("correct_choice", "").strip()  
         correct_letter = ""  
-
-        # Find the correct letter for the correct answer  
+ 
         for idx, option in enumerate(options):  
             if option.strip().lower() == correct_answer_text.lower():  
                 correct_letter = chr(65 + idx)  
                 break  
 
         correct_answer_display = f"{correct_letter}. {correct_answer_text}"  
-
-        # Determine student's answer  
+ 
         student_answer = student_answers.get(f"Q{i+1}", "").strip()  
         student_choice_match = re.match(r"^[A-D]", student_answer)  
         student_choice = student_choice_match.group(0) if student_choice_match else ""  
-
-        # Check if the student answer is correct  
+  
         is_correct = correct_letter == student_choice  
         if is_correct:  
             total_correct += 1  
@@ -98,7 +95,6 @@ def evaluate_answers(questions, student_answers):
 
     return feedback, total_correct  
 
-# Streamlit UI  
 st.title("MCQs Quiz Generator")  
 uploaded_file = st.file_uploader("Upload a document (PDF, DOCX, TXT, PPTX)", type=["pdf", "docx", "txt", "pptx"])  
 
