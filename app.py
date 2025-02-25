@@ -25,7 +25,7 @@ def create_client():
     return Mistral(api_key=api_key)  
 
 client = create_client()  
-functions for file extraction, question generation, and evaluation...  
+#functions for file extraction, question generation, and evaluation...  
 def extract_text_from_file(uploaded_file):  
     file_type = uploaded_file.name.split('.')[-1].lower()  
     if file_type == "pdf":  
